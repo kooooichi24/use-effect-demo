@@ -1,7 +1,14 @@
+import { useEffect, useRef } from 'react'
+
 type SomeComponentProps = {
   someFlag: boolean
 }
 
 export const SomeComponent = ({ someFlag }: SomeComponentProps) => {
-  return <p>ここに、このコンポーネントがレンダリングされた回数を表示してみよう!</p>
+  const count = useRef(0)
+  useEffect(() => {
+    someFlag && count.current++
+  }, [someFlag])
+
+  return <p>rendering count is {count.current}</p>
 }
