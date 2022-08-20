@@ -7,8 +7,8 @@ type SomeComponentProps = {
 export const SomeComponent = ({ someFlag }: SomeComponentProps) => {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    setCount((prev) => prev + 1)
+    someFlag && setCount((prev) => prev + 1)
   }, [someFlag])
 
-  return <p>rendering count is {someFlag ? count * 2 : count}</p>
+  return <p>rendering count is {count}</p>
 }
