@@ -1,7 +1,7 @@
 type SomeComponentProps = {
-  someFlag: boolean
+  count: number
 }
 
-export const SomeComponent = ({ someFlag }: SomeComponentProps) => {
-  return <p>ここに、このコンポーネントがレンダリングされた回数を表示してみよう!</p>
+export const SomeComponent = ({ count }: SomeComponentProps) => {
+  return <p>rendering count is {count}</p>
 }
